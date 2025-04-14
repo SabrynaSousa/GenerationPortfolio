@@ -78,6 +78,20 @@
       text-decoration: underline;
     }
 
+    button {
+      background-color: #bb00ea;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #8e00ba;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -98,7 +112,10 @@
 
   <section>
     <p>Você pode me encontrar pelos canais abaixo:</p>
-    <ul>
+
+    <button onclick="toggleContatos()">Ocultar Contatos</button>
+
+    <ul id="listaContatos">
       <li>Email: <strong>layssantos799@gmail.com</strong></li>
       <li>LinkedIn: <a href="https://linkedin.com/in/lays-sabryna-sousa/" target="_blank">linkedin.com/in/lays-sabryna-sousa</a></li>
       <li>GitHub: <a href="https://github.com/SabrynaSousa" target="_blank">github.com/SabrynaSousa</a></li>
@@ -108,5 +125,23 @@
   <footer>
     <p>© 2025 - Sabryna Sousa</p>
   </footer>
+
+  <!-- JavaScript com DOM -->
+  <script>
+
+    // Função para ocultar/mostrar lista de contatos
+    function toggleContatos() {
+      const lista = document.getElementById("listaContatos");
+      const botao = event.target;
+
+      if (lista.style.display === "none") {
+        lista.style.display = "block";
+        botao.textContent = "Ocultar Contatos";
+      } else {
+        lista.style.display = "none";
+        botao.textContent = "Mostrar Contatos";
+      }
+    }
+  </script>
 </body>
 </html>
